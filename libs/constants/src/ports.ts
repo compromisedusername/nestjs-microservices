@@ -1,0 +1,6 @@
+export const PORTS = {
+  TRANSPORT_TCP_PORT: 8002,
+  ORDER_APP_PORT: 3001,
+  APP_PORT: 3001,
+
+}

@@ -1,0 +1,3 @@
+export const SERVICES = {
+  INVENTORY_SERVICE: 'INVENTORY_SERVICE'
+}

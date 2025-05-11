@@ -3,14 +3,16 @@ import { OrderController } from "./order.controller";
 import { OrderService } from "./order.service";
 import { ClientsModule } from "@nestjs/microservices";
 import { Transport } from "@nestjs/microservices";
+import { PORTS } from "@app/constants/ports";
+import { SERVICES } from "@app/constants/services";
 
 @Module({
 	imports: [
 		ClientsModule.register([
 			{
-			  name: 'INVENTORY_SERVICE',
+			  name: SERVICES.INVENTORY_SERVICE,
 			  transport: Transport.TCP,
-				options: { port: 8002 },
+				options: { port: PORTS.TRANSPORT_TCP_PORT },
 			},
 		]),
 	],
