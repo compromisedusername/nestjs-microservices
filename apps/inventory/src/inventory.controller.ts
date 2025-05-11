@@ -21,9 +21,5 @@ export class InventoryController {
     this.inventoryService.handleOrderCreated(data);
   }
 
-  @EventPattern(EVENTS.PRODUCT_ADDED)
-  async handleProductAdded(data: Inventory){
-    this.inventoryService.handleProductAdded(data);
-  }
 
 }

@@ -30,15 +30,7 @@ export class InventoryService {
       this.inventory.push({ ...product, id: id });
     }
     console.log('Product added to Inventory', p, this.inventory);
-    this.orderClient.emit(EVENTS.PRODUCT_ADDED, p);
     return p;
-  }
-  handleProductAdded(product: Inventory) {
-    if (product) {
-      console.log('Product added', product);
-    } else {
-      console.log('Product not added');
-    }
   }
 
   handleOrderCreated(order: Order) {
