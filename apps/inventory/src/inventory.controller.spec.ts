@@ -14,9 +14,4 @@ describe('InventoryController', () => {
     inventoryController = app.get<InventoryController>(InventoryController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(inventoryController.getHello()).toBe('Hello World!');
-    });
-  });
 });

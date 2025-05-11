@@ -12,8 +12,4 @@ export class InventoryController {
     console.log('Order created: ', data);
   }
 
-  @Get()
-  getHello(): string {
-    return this.inventoryService.getHello();
-  }
 }
