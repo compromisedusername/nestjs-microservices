@@ -3,6 +3,8 @@ import { ClientProxy } from '@nestjs/microservices';
 import { Order } from './entities/order.entity';
 import { OrderStatus } from './entities/order.entity';
 import { CreateOrderInput } from './dto/create-order.dto';
+import { EVENTS } from '@app/constants';
+import { OrderProcessPayload } from 'libs/shared/entities/orderprocesspayload.entity';
 
 @Injectable()
 export class OrderService {
@@ -20,8 +22,18 @@ export class OrderService {
 
     this.orders.push(order)
     console.log('Order created', order, this.orders);
-    this.inventoryClient.emit('order_created', order);
+    this.inventoryClient.emit(EVENTS.ORDER_CREATED, order);
     return order;
+  }
+
+  handleOrderProcessed(data: OrderProcessPayload){
+    const order = this.orders.find((o) => o.id.toString() === data.orderId.toString());
+    if(order ){
+      order.status = data.success ? OrderStatus.COMPLETED : OrderStatus.CANCELLED;
+      console.log('Order status updated: ',order,", ORDERS: ",this.orders)
+    }else{
+      console.log("Order not found");
+    }
   }
 
 }

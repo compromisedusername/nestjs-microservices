@@ -12,9 +12,9 @@ export class InventoryService {
   constructor(@Inject(SERVICES.ORDER_SERVICE) private orderClient: ClientProxy){}
 
   private inventory: Inventory[] = [
-    {id: 1, name: 'Laptop', quantity: 100},
-    {id: 2, name: 'Laptop', quantity: 100},
-    {id: 3, name: 'Laptop', quantity: 100},
+    {id: 1, name: 'a', quantity: 100},
+    {id: 2, name: 'b', quantity: 100},
+    {id: 3, name: 'c', quantity: 100},
   ]
 
   handleOrderCreated(order: Order) {
