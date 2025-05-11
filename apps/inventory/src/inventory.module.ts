@@ -11,7 +11,7 @@ import { PORTS } from '@app/constants/ports';
       {
         name: SERVICES.ORDER_SERVICE,
         transport: Transport.TCP,
-        options: {port: PORTS.TRANSPORT_TCP_PORT}
+        options: {port: PORTS.ORDER_TRANSPORT_TCP_PORT}
       }
     ])
   ],

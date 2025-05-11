@@ -9,7 +9,7 @@ async function bootstrap() {
   const app = await NestFactory.createMicroservice<MicroserviceOptions>(InventoryModule, {
     transport: Transport.TCP,
     options: {
-      port: PORTS.TRANSPORT_TCP_PORT,
+      port: PORTS.INVENTORY_TRANSPORT_TCP_PORT,
       host: HOSTS.INVENTORY_HOST
     }
   })

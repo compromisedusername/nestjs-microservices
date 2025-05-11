@@ -12,7 +12,7 @@ import { SERVICES } from "@app/constants/services";
 			{
 			  name: SERVICES.INVENTORY_SERVICE,
 			  transport: Transport.TCP,
-				options: { port: PORTS.TRANSPORT_TCP_PORT },
+				options: { port: PORTS.INVENTORY_TRANSPORT_TCP_PORT},
 			},
 		]),
 	],
