@@ -5,7 +5,7 @@ import { Body, Post } from '@nestjs/common';
 import { Order } from './entities/order.entity';
 import { CreateOrderInput } from './dto/create-order.dto';
 import { EVENTS } from '@app/constants';
-import { OrderProcessPayload } from 'libs/shared/entities/orderprocesspayload.entity';
+import { OrderProcessPayload } from 'libs/shared/entities/order-process.payload.entity';
 
 @Controller()
 export class OrderController {

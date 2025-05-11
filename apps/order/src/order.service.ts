@@ -4,12 +4,13 @@ import { Order } from './entities/order.entity';
 import { OrderStatus } from './entities/order.entity';
 import { CreateOrderInput } from './dto/create-order.dto';
 import { EVENTS } from '@app/constants';
-import { OrderProcessPayload } from 'libs/shared/entities/orderprocesspayload.entity';
+import { OrderProcessPayload } from 'libs/shared/entities/order-process.payload.entity';
+import { SERVICES } from '@app/constants/services';
 
 @Injectable()
 export class OrderService {
 
-  constructor(@Inject('INVENTORY_SERVICE') private inventoryClient: ClientProxy) { }
+  constructor(@Inject(SERVICES.INVENTORY_SERVICE) private inventoryClient: ClientProxy) { }
   private orders: Order[] = [];
 
   createOrder(createOrderInput: CreateOrderInput): Order {
